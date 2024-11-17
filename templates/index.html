@@ -1,0 +1,224 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MarcaData - Soluciones basadas en datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" href="{% static 'images/ISOTIPO SOLO.png' %}" type="image/png">
+</head>
+<body>
+    <nav>
+        <a href="#">
+            <img src="{% static 'images/LOGO COMPLETO MARCA DATA FONDO CLARO.png' %}" alt="Logo" class="logo" id="nav-logo">
+        </a>
+        <div class="nav-links">
+            <a href="#sector1">Inicio</a>
+            <a href="#sector2">Nuestra misión</a>
+            <a href="#sector3">Servicios</a>
+            <a href="#sector4">Contacto</a>
+        </div>
+    </nav>
+
+    <section id="sector1" class="section-with-logo">
+        <div class="section-image">
+            <img src="{% static 'images/MAQUETA LOGO MARCA DATA 2 REDONDO.png' %}" alt="Logo Redondo" class="logo-redondo">
+        </div> 
+        <div class="content-wrapper">
+            <h1>Data-Driven Marketing e Inteligencia Artificial para Impulsar tu Negocio</h1>
+            <p>En MarcaData, creemos que el futuro del marketing está en los datos. Nos especializamos en crear estrategias basadas en ciencia de datos e inteligencia artificial para maximizar tus resultados y optimizar cada proceso de tu negocio.</p>
+            <a href="#sector2" class="btn">Descubre Más</a>
+        </div>
+    </section>
+
+    <section id="sector2" class="sector2">
+        <div class="section-content">
+            <div class="text-content">
+                <h1>El Problema del Marketing Digital Actual</h1>
+                <p>Las agencias de marketing suelen basar sus decisiones en métricas genéricas, sin aprovechar todo el potencial de los datos. Esto lleva a campañas poco efectivas y a una falta de automatización en los procesos de venta.</p>
+                <p>Nosotros cambiamos eso. Aplicamos ciencia de datos e inteligencia artificial para ofrecer soluciones personalizadas que optimizan tus campañas y aumentan tus ingresos.</p>
+            </div>
+            <img src="{% static 'images/img1.jpeg' %}" alt="Problema del Marketing" class="section-image">
+        </div>
+    </section>
+
+    <section id="sector3" class="sector3">
+        <div class="section-content">
+            <img src="{% static 'images/img2.png' %}" alt="Nuestros Servicios" class="section-image">
+            <div class="text-content">
+                <h1>Nuestros Servicios</h1>
+                <ul>
+                    <li><b>Análisis de Campañas:</b> Diseñamos y optimizamos campañas basadas en análisis de datos y predicciones precisas.</li>
+                    <li><b>Automatización de Ventas:</b> Implementamos herramientas de CRM como Zoho y PipeDrive para mejorar la gestión de clientes.</li>
+                    <li><b>Estrategias Personalizadas:</b> Creamos funnels de ventas y landing pages optimizadas para maximizar tus conversiones.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="sector4" class="sector4">
+        <div class="content-wrapper-sector4">
+            <h1>Contacto</h1>
+            <p>¿Listo para llevar tu negocio al siguiente nivel? Nos encantaría conocer más sobre tus necesidades y mostrarte cómo nuestras soluciones pueden ayudarte a crecer.</p>
+            <form action="#" method="post">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Correo Electrónico:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="message">Mensaje:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+    
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-social">
+                <h3>Síguenos</h3>
+                <ul>
+                    <li><a href="#"><i class="fab fa-facebook-f"></i> Facebook</a></li>
+                    <li><a href="#"><i class="fab fa-instagram"></i> Instagram</a></li>
+                    <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact">
+                <h3>Contáctanos</h3>
+                <p>Teléfono: +54 11 1234 5678</p>
+                <p>Email: info@marcadata.com</p>
+                <p>Dirección: Buenos Aires, Argentina</p>
+            </div>
+
+            <div class="footer-newsletter">
+                <h3>Suscríbete a nuestro Newsletter</h3>
+                <form action="#" method="post">
+                    <input type="email" placeholder="Tu correo electrónico" required>
+                    <button type="submit">Suscribirse</button>
+                </form>
+            </div>
+
+            <div class="footer-links">
+                <h3>Enlaces Rápidos</h3>
+                <ul>
+                    <li><a href="#">Política de Privacidad</a></li>
+                    <li><a href="#">Términos de Servicio</a></li>
+                    <li><a href="#">FAQs</a></li>
+                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#">Noticias</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2024 MarcaData. Todos los derechos reservados.</p>
+            <a href="#top">Volver al inicio</a>
+        </div>
+    </footer>
+    <script>
+        // Selecciona todas las imágenes en la página
+        const images = document.querySelectorAll('img');
+    
+        // Función para verificar si la imagen está visible en el viewport
+        const aparecerImagen = (img) => {
+            const rect = img.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+    
+        // Escucha el evento de scroll para añadir la clase 'aparecer'
+        const verificarScroll = () => {
+            images.forEach((img) => {
+                if (aparecerImagen(img)) {
+                    img.classList.add('aparecer');
+                }
+            });
+        };
+    
+        // Ejecutar al cargar y al hacer scroll
+        window.addEventListener('scroll', verificarScroll);
+        window.addEventListener('load', verificarScroll);
+    </script>
+    <!-- Botón Flotante para Volver al Inicio -->
+    <button id="boton-inicio" onclick="volverAlInicio()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+    <script>
+        // Función para volver al inicio de la página
+        const volverAlInicio = () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    
+        // Mostrar/Ocultar el botón al hacer scroll
+        window.addEventListener('scroll', () => {
+            const botonInicio = document.getElementById('boton-inicio');
+            if (window.scrollY > 300) {
+                botonInicio.style.display = 'block';
+            } else {
+                botonInicio.style.display = 'none';
+            }
+        });
+    </script>
+    <script>
+        // Seleccionar todos los títulos h1 y h2
+        const titulos = document.querySelectorAll('h1, h2');
+    
+        // Función para verificar si el elemento está en el viewport
+        const isInViewport = (element) => {
+            const rect = element.getBoundingClientRect();
+            return rect.top < window.innerHeight && rect.bottom >= 0;
+        };
+    
+        // Función para animar los títulos según su proximidad al borde
+        const animateTitles = () => {
+            const margen = 200; // Margen adicional para definir proximidad a los bordes
+            const anchoPantalla = window.innerWidth;
+    
+            titulos.forEach((titulo) => {
+                if (isInViewport(titulo)) {
+                    const rect = titulo.getBoundingClientRect();
+    
+                    // Verificar si está más cerca del borde izquierdo o derecho
+                    if (rect.left < margen) {
+                        // Aparece desde la derecha si está muy cerca del borde izquierdo
+                        titulo.classList.add('slideInRight');
+                        titulo.classList.remove('slideInLeft');
+                    } else if (rect.right > (anchoPantalla - margen)) {
+                        // Aparece desde la izquierda si está muy cerca del borde derecho
+                        titulo.classList.add('slideInLeft');
+                        titulo.classList.remove('slideInRight');
+                    } else {
+                        // Aplica la animación según el centro de la pantalla
+                        const middleScreen = anchoPantalla / 2;
+                        if (rect.left < middleScreen) {
+                            titulo.classList.add('slideInLeft');
+                            titulo.classList.remove('slideInRight');
+                        } else {
+                            titulo.classList.add('slideInRight');
+                            titulo.classList.remove('slideInLeft');
+                        }
+                    }
+                } else {
+                    // Reiniciar la animación cuando el título no está en el viewport
+                    titulo.classList.remove('slideInLeft', 'slideInRight');
+                }
+            });
+        };
+    
+        // Escuchar el evento de scroll
+        window.addEventListener('scroll', animateTitles);
+    
+        // Ejecutar la función al cargar la página para animaciones iniciales
+        animateTitles();
+    </script>
+</body>
+</html>

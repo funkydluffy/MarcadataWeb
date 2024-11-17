@@ -1,0 +1,807 @@
+/* Fuentes personalizadas */
+@font-face {
+    font-family: 'NoirPro';
+    src: url('../fonts/NoirPro-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NoirPro';
+    src: url('../fonts/NoirPro-Bold.ttf') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NoirPro';
+    src: url('../fonts/NoirPro-Light.ttf') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NoirPro';
+    src: url('../fonts/NoirPro-Medium.ttf') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'NoirPro';
+    src: url('../fonts/NoirPro-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'NoirPro', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+    background: url('../images/honeycomb.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin-top: 5%;
+}
+
+/* Animación lenta del fondo */
+body {
+    background-image: url('../images/honeycomb.jpg'); /* Asegúrate de usar la ruta correcta de tu imagen */
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Mantiene el fondo fijo mientras se desplaza la página */
+    animation: fondoAnimado 100s infinite alternate linear;
+}
+
+@keyframes fondoAnimado {
+    from {
+        background-position: top left;
+    }
+    to {
+        background-position: bottom right;
+    }
+}
+
+/* Animaciones Sutiles (Hover y Fade-In) */
+button, .nav-links a {
+    transition: all 0.3s ease;
+}
+
+button:hover, .nav-links a:hover {
+    transform: scale(1.05);
+    color: #00bcd4;
+}
+
+/* Botón flotante para volver al inicio */
+#boton-inicio {
+    position: fixed;
+    bottom: 30px; /* Ajuste de posición para que no esté tan al borde */
+    right: 30px;
+    padding: 15px;
+    background-color: #333; /* Color oscuro para mayor contraste */
+    color: #00bcd4; /* Color del icono en tono azul */
+    border: none;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 1.5em;
+    display: none;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s, opacity 0.3s, background-color 0.3s;
+}
+
+/* Efecto hover para el botón */
+#boton-inicio:hover {
+    transform: scale(1.15);
+    background-color: #00bcd4; /* Cambio de color al hacer hover */
+    color: white; /* Icono blanco al hacer hover */
+    opacity: 0.9;
+}
+
+.footer {
+    opacity: 0;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+/* Evitar ajustes automáticos del navegador en modo oscuro */
+html {
+    color-scheme: light;
+}
+
+h1 {
+    font-size: 3em; /* Aumentar el tamaño del título */
+    font-weight: 400;
+}
+
+h2 {
+    font-size: 2.5em;
+}
+
+p {
+    font-size: 1.8em; /* Aumentar el tamaño del párrafo */
+    line-height: 1.6;
+    font-weight: 100; /* Fuente más fina */
+}
+
+/* Animaciones de entrada para los títulos */
+h1, h2 {
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+/* Animación desde la izquierda */
+.slideInLeft {
+    animation: slideInFromLeft 1s ease-out forwards;
+}
+
+/* Animación desde la derecha */
+.slideInRight {
+    animation: slideInFromRight 1s ease-out forwards;
+}
+
+/* Keyframes para animaciones */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estilos para texto fuerte */
+strong,
+b {
+    font-weight: 450;
+    font-size: 1.2em;
+    color: #f4f4f4;
+}
+
+ul {
+    font-size: 1.8em; /* Aumenta el tamaño de la fuente */
+    line-height: 1.8; /* Mejora el espaciado entre líneas */
+    font-weight: 100; /* Fuente más fina */
+}
+
+/* Estilos para la barra de navegación con el logo */
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(51, 51, 51, 0.8);
+    padding: 10px 20px;
+    z-index: 1000;
+}
+
+/* Efecto de fade-in para imágenes */
+img {
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+/* Clase para hacer aparecer la imagen */
+img.aparecer {
+    opacity: 1;
+}
+
+/* Estilos para el logo */
+.logo {
+    height: 50px;
+    max-width: 150px;
+    margin-left: 65px; /* Margen izquierdo para mover el logo hacia adentro */
+    filter: invert(0) hue-rotate(0deg) brightness(1) !important;
+    -webkit-filter: invert(0) hue-rotate(0deg) brightness(1) !important;
+    mix-blend-mode: normal;
+    isolation: isolate;
+    image-rendering: auto;
+}
+
+/* Logo por defecto (modo claro) */
+.logo {
+    content: url('../images/LOGO COMPLETO MARCA DATA FONDO CLARO.png');
+}
+
+/* Logo en modo oscuro y ajustes de color */
+@media (prefers-color-scheme: dark) {
+    .logo {
+        content: url('../images/LOGO COMPLETO MARCA DATA LETRAS BLANCAS.png');
+        filter: invert(0%) !important;
+        mix-blend-mode: normal;
+        image-rendering: auto;
+    }
+}
+
+/* Estilos para los enlaces de navegación */
+.nav-links {
+    display: flex;
+    flex-wrap: wrap; /* Permite que los enlaces se ajusten en múltiples líneas si es necesario */
+    gap: 15px;
+    margin-right: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: 300; /* Fuente más fina */
+    font-size: 1.1em;
+    padding: 10px 20px; /* Aumentar padding horizontal */
+    margin-right: 50px; /* Mover botones hacia adentro */
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* Ajustes generales para sectores */
+section {
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
+
+
+/* Fondos y colores de sectores */
+/* Sector 1 - Borde diagonal */
+.sector1 {
+    background-color: rgba(0, 0, 0, 0.6);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+}
+
+/* Sector 2 - Borde diagonal invertido (Modo claro) */
+.sector2 {
+    background-color: rgba(255, 253, 253, 0.176);
+    padding: 100px 20px;
+    clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+}
+
+/* Sector 2 - Borde diagonal invertido (Modo oscuro) */
+@media (prefers-color-scheme: dark) {
+    .sector2 {
+        background-color: rgba(30, 30, 30, 0.67); /* Color más oscuro para el modo oscuro */
+        padding: 100px 20px;
+        clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 90%);
+    }
+}
+
+/* Sector 3 - Borde diagonal */
+.sector3 {
+    background-color: rgba(25, 144, 157, 0.556);
+    clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+}
+
+/* Ajuste del sombreado del Sector 4 */
+#sector4 {
+    padding: 20px 0 !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 !important;
+    max-width: 1000px;
+    margin-bottom: 100px !important;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    clip-path: polygon(0 7%, 100% 0, 100% 100%, 0 100%);
+    padding: 60px 0;
+    margin-bottom: 100px; /* Incrementa el margen inferior */
+}
+
+/* Sector 4 - Ajuste del sombreado (Modo oscuro) */
+@media (prefers-color-scheme: dark) {
+    .sector4 {
+        background-color: rgba(255, 255, 255, 0.8);
+        clip-path: polygon(0 0, 100% 10%, 100% 100%, 0 90%);
+        padding: 100px 20px;
+        margin-bottom: 50px; /* Añadir margen inferior */
+    }
+}
+
+/* Estilos para contenido con imágenes */
+.section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px 150px; /* Aumenta el margen horizontal (izquierda y derecha), disminuye el margen vertical (arriba y abajo) */
+    gap: 5px; /* Mantén el espacio entre la imagen y el texto */
+}
+
+.section-image {
+    max-width: 600px; /* Aumenta el tamaño máximo de la imagen */
+    width: 100%;
+    height: auto;
+    border-radius: none;
+    box-shadow: none;
+}
+
+@media (max-width: 768px) {
+    input,
+    textarea {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 18px;
+    }
+    h1 {
+        font-size: 2em; /* Reducir tamaño de título en pantallas pequeñas */
+    }
+
+    p {
+        font-size: 1em; /* Ajustar tamaño del párrafo en pantallas pequeñas */
+    }
+
+    .section-image {
+        max-width: 100%; /* Asegura que la imagen ocupe el ancho completo en pantallas pequeñas */
+    }
+    
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-newsletter input {
+        width: 100%;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+}
+/* Ajuste para el contenedor de la sección */
+.section-with-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    padding: 30px 0;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+/* Ajuste para la imagen del logo redondo */
+.section-image {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    margin-left: -80px; /* Mueve el logo más a la izquierda */
+}
+
+/* Estilo para el logo redondo */
+.logo-redondo {
+    width: 550px; /* Tamaño especificado */
+    height: auto;
+    border: none;
+    border-radius: 0;
+    object-fit: contain;
+}
+
+/* Ajustes para el título y párrafo */
+
+.content-wrapper h1 {
+    margin-bottom: 0;
+}
+
+.content-wrapper p {
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    input,
+    textarea {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 18px;
+    }
+    .section-with-logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .logo-redondo {
+        width: 150px; /* Tamaño reducido solo para pantallas pequeñas */
+        max-width: 90%;
+        text-align: center;
+    }
+}
+
+/* Estilo para el contenedor de texto */
+.text-container {
+    flex: 1;
+    text-align: center;
+    max-width: 40%; /* Ajuste del ancho del texto */
+    margin-top: 20%;
+}
+
+/* Estilos específicos para el sector 4 */
+.content-wrapper-sector4 {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+form {
+    max-width: 90%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* Espacio entre los campos */
+    padding: 20px;
+}
+
+/* Ajustes de los campos del formulario */
+input,
+textarea {
+    width: 100%; /* Aumenta el ancho al 90% del contenedor */
+    max-width: 95%; /* Elimina el límite máximo de ancho */
+    padding: 20px; /* Aumenta el padding para hacer los campos más grandes */
+    font-size: 20px; /* Ajusta el tamaño de fuente para mejor legibilidad */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.2);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+/* Ajustes para el contenedor del formulario */
+#contact-section {
+    clip-path: none; /* Eliminar borde inclinado */
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    padding: 20px; /* Añadir espacio interno */
+}
+
+/* Responsividad para el formulario en pantallas pequeñas */
+@media (max-width: 768px) {
+    input,
+    textarea {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 18px;
+    }
+    input,
+    textarea {
+        width: 90%; /* Ajustar el ancho en dispositivos móviles */
+        font-size: 16px;
+    }
+}
+
+button {
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: #555;
+}
+
+/* Estilos para el footer */
+.footer {
+    background-color: rgba(51, 51, 51, 0.8); /* Opacidad ajustada */
+    color: white;
+    padding: 15px 20px; /* Padding ajustado para mayor espacio */
+    text-align: center;
+    width: 100%
+}
+
+/* Contenedor del footer */
+.footer-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-around; /* Espaciado uniforme entre columnas */
+    align-items: flex-start;
+    gap: 0;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+/* Estilo para cada columna del footer */
+.footer-column {
+    flex: 1;
+    padding: 10px;
+    position: relative;
+}
+
+/* Líneas divisorias con pseudo-elementos */
+.footer-column:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: 10%;
+    bottom: 10%;
+    width: 1px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ajustes para alinear 'Síguenos', 'Contáctanos', 'Newsletter' y 'Enlaces Rápidos' */
+.footer-social,
+.footer-contact,
+.footer-newsletter,
+.footer-links {
+    text-align: center;
+    margin: 0 auto;
+}
+
+/* Ajuste para listas del footer */
+.footer-links ul,
+.footer-social ul {
+    font-size: 0.9em;
+    line-height: 1.5;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Enlaces y texto del footer */
+.footer-social a,
+.footer-contact p,
+.footer-newsletter form,
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.85em;
+    margin: 0;
+}
+
+.footer-social a:hover,
+.footer-links a:hover {
+    color: #00bcd4;
+}
+
+/* Ajustar espacio entre elementos en 'Contáctanos' */
+.footer-contact p {
+    margin-bottom: 8px; /* Espacio uniforme entre líneas */
+}
+
+/* Input y botón del newsletter */
+.footer-newsletter input {
+    padding: 8px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 0.85em;
+}
+
+.footer-newsletter button {
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #555;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.85em;
+}
+
+.footer-newsletter button:hover {
+    background-color: #777;
+}
+
+/* Texto inferior del footer */
+.footer-bottom {
+    margin-top: 10px;
+    font-size: 0.7em;
+    padding-bottom: 15px;
+}
+
+/* Enlace 'Volver al inicio' */
+.footer-bottom a {
+    color: #f4f4f4;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: 400;
+}
+
+.footer-bottom a:hover {
+    text-decoration: underline;
+}
+
+/* Media Queries para móviles */
+@media (max-width: 768px) {
+    input,
+    textarea {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 18px;
+    }
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .footer-column:not(:last-child)::after {
+        display: none; /* Eliminar líneas en móviles */
+    }
+
+    .footer-newsletter input {
+        width: 100%;
+    }
+}
+
+
+/* Ajustes de márgenes y padding para sector 1 y sector 4 */
+#sector1, #sector4 {
+    margin-bottom: 100px !important;
+    margin: 0 auto;
+    padding: 40px 20px;
+    max-width: 1200px;
+    box-sizing: border-box;
+}
+
+/* Estilos generales para .content-wrapper */
+.content-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 90%;
+    width: 100%;
+    text-align: right;
+    line-height: 1.6;
+    gap: 20px;
+    margin-right: 5%;
+    height: 60%;
+}
+
+/* Ajustes para evitar superposición en sector 1 (section-with-logo) */
+.section-with-logo {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 80px !important;
+    padding: 30px 0;
+    max-width: 100%;
+    margin: 0 auto;
+    margin-top: 40%;
+}
+
+.section-with-logo .section-image {
+    flex: 0 0 35%;
+    width: 35%;
+    height: auto;
+    margin-left: -50px;
+    flex: 1;
+    max-width: 60%;
+    text-align: center;
+}
+
+#sector1 .section-image {
+    flex: 0 0 auto; 
+    margin-left: 0; /* Ajustar para centrar */ 
+    margin-right: 10%;
+
+}
+
+#sector1 .content-wrapper {
+    max-width: 100%; /* Asegura que ocupe todo el ancho posible */
+}
+
+/* Ajustes para el Sector 2 */
+
+
+#sector2 .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 5% !important; /* Forzar un gap mínimo */
+    padding: 40px 20px; /* Ajusta el padding para mejor compaginación */
+}
+
+#sector2 .section-image {
+    flex: 0 0 55%; /* Mantener el tamaño de la imagen */
+    max-width: 35%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    border-radius: 15px; /* Ajusta el valor según el redondeado deseado */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    margin: 0; /* Elimina el margen adicional */
+    margin-right: 10%;
+}
+
+#sector2 .text-content {
+    flex: 1;
+    width: 40%;
+    max-width: 60%; /* Asegura que el texto ocupe la mitad del ancho disponible */
+    line-height: 1.4;
+    margin: 0 auto;
+    margin-left: 10%;
+}
+
+/* Ajustes para el Sector 3 */
+#sector3 .section-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0 !important; /* Igualar gap al sector 2 */
+    padding: 40px 20px; /* Igualar márgenes laterales al sector 2 */
+}
+
+#sector3 .section-image {
+    flex: 0 0 45%;
+    max-width: 35%; /* Ajusta el tamaño de la imagen */
+    height: auto;
+    margin-left: 20px; /* Eliminar margen negativo */
+    border-radius: 15px; /* Ajusta el valor según el redondeado deseado */
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    margin: 10em; /* Centra la imagen */
+    margin-right: 5%;
+}
+
+#sector3 .text-content {
+    flex: 1;
+    width: 100%;
+    max-width: 100%; /* Asegura que el texto ocupe la mitad del ancho disponible */
+    margin-right: 10%; /* Ajusta el margen para mejorar la compaginación */
+    line-height: 1.4;
+    margin-left: 0%;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 768px) {
+    input,
+    textarea {
+        width: 100% !important;
+        max-width: none !important;
+        font-size: 18px;
+    }
+    #sector1, #sector4 {
+    padding: 20px 0 !important;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 0 !important;
+    max-width: 1000px;
+    margin-bottom: 100px !important;
+        padding: 20px;
+    }
+
+    .section-2,
+    .section-3,
+    .section-with-logo {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .section-2 .section-image,
+    .section-3 .section-image,
+    .section-with-logo .section-image {
+        flex: 0 0 auto;
+        width: 100%;
+    }
+
+    .section-2 .content-wrapper,
+    .section-3 .content-wrapper{
+        max-width: 90%;
+        text-align: center;
+    }
+}
